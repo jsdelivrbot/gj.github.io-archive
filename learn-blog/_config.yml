@@ -1,0 +1,21 @@
+# Site settings
+title: ga-be
+header-img: img/home-bg.png
+email: gj+learn@mail.co.de
+copyright_name: gj
+description: > # this means to ignore newlines until "baseurl:"
+  words about programming, music, and sonic pi
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: gabe_jackson
+github_username:  gj
+learn_profile: gj
+email_username: gj+learn@mail.co.de
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="words about programming, music, and sonic pi">
+
+    <title>"Such Great Heights" in Sonic Pi</title>
+
+    <link rel="canonical" href="/sonicpi/play_and_sleep">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a class="navbar-brand navbar-right" href="https://learn.co" target="_blank">
+            <h6 class="powered_by">Powered by
+                <svg id='svg__logo--text' viewBox='0 0 130.5 42' fill="currentColor" width="50" class="svg-center">
+                  <path d='M41.2,29.5h13v5.1h-19V8h6V29.5z'/>
+                  <path d='M61.1,26.7c0.4,2.6,1.9,4.1,4.3,4.1c1.5,0,2.6-0.5,3.4-1.7h5.7c-1.1,3.8-4.7,6.1-9.3,6.1 c-5.9,0-9.9-4.1-9.9-10.1c0-6,4-10.2,9.9-10.2c4.1,0,7.1,2,8.6,5.7c0.7,1.7,1,3.5,1,6.1H61.1z M68.9,22.7 c-0.2-2.3-1.6-3.5-3.8-3.5c-2.2,0-3.6,1.2-4.1,3.5H68.9z'/>
+                  <path d='M77.7,21.4c0.4-4.4,3.1-6.6,8.5-6.6c2.9,0,5.1,0.7,6.7,2c1.4,1.2,1.9,2.8,1.9,5.6v8.9 c0,2.1,0.1,2.4,0.7,3.3h-5.8c-0.2-0.7-0.2-0.8-0.4-1.5c-1.9,1.6-3.2,2-5.5,2c-4.3,0-7.1-2.4-7.1-6c0-3.6,2.3-5.5,7.7-6.4l3.1-0.5 c1.3-0.2,1.7-0.5,1.7-1.3c0-1.1-1.1-1.8-3-1.8c-2.1,0-3.2,0.7-3.4,2.3H77.7z M89.3,25.5c-0.6,0.2-1.1,0.4-2.1,0.6l-2,0.4 c-2,0.5-2.9,1.2-2.9,2.3c0,1.3,1.1,2,2.9,2c1.9,0,3.2-0.8,4.2-2.4V25.5z'/>
+                  <path d='M104.4,15.4l-0.2,3.4c1.1-3.1,2.6-4,6.7-4v5.3c-0.7-0.1-1-0.1-1.4-0.1c-2,0-3.6,0.9-4.2,2.3 c-0.6,1.3-0.8,3.1-0.8,6.8v5.4h-5.7V15.4H104.4z'/>
+                  <path d='M118.5,15.4v1.9c2.1-1.9,3.3-2.4,5.3-2.4c4.2,0,6.7,2.8,6.7,7.3v12.5h-5.7V24.1c0-2-0.1-2.7-0.6-3.4 c-0.5-0.7-1.3-1.1-2.3-1.1c-1,0-1.8,0.4-2.4,1c-0.6,0.7-0.8,1.5-0.8,3.2v10.8H113V15.4H118.5z'/>
+                  <path stroke-miterlimit='10' d='M15.1,22l8.4,0l-8.4,13.9V22z M12.4,5.6l0,13.7H4.1L12.4,5.6z M12.6,1L0.7,20.4c-0.2,0.3-0.2,0.7,0,1c0.2,0.4,0.6,0.5,1,0.5l10.8,0l0,18.4c0,0.5,0.3,1,0.8,1.1c0.1,0,0.2,0.1,0.3,0.1 c0.4,0,0.8-0.2,1-0.5l11.7-19c0.2-0.3,0.3-1.1,0.3-1.5c-0.2-0.8-0.5-1.2-1.2-1.2H15.2l0-17.5c0-0.5-0.4-1.1-1.3-1.2 c-0.1,0-0.2,0-0.3,0C13.2,0.5,12.8,0.7,12.6,1'/>
+                </svg>
+            </h6>
+        </a>
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+
+                <li>
+                  <a href="/sonicpi.html">Sonic Pi</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>play and sleep</h1>
+                    <hr class="small">
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<p>"Such Great Heights" opens with an instantly recognizable synth riff:</p>
+			<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/263670608%3Fsecret_token%3Ds-WA76l&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+			<p>This is the sheet music for the first eight beats of that riff:</p>
+			<img class="aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/notation_empty_large.png" alt="notation_empty_large" />
+			<p>If you don't have much of a musical background, try thinking of it as a simple pattern that we're going to code. There are sixteen notes spaced equally across eight beats. Notes at the same vertical level on the musical staff are the same pitch, so we have six repeated, higher-pitched notes:</p>
+			<img class="aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/notation_c5.gif" alt="notation_C5" />
+			<p>and ten repeated, lower-pitched notes:</p>
+			<img class="aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/notation_f4.gif" alt="notation_F4" />
+			<p>The pitch of the higher notes is C5. If you want to hear what this sounds like in Sonic Pi, type <code>play :C5</code> and press <strong>Run</strong>. The pitch of the lower notes is F4. To hear that, change the <code>C5</code> to an <code>F4</code> and press <strong>Run</strong> again.</p>
+			<p>The simplest way to transpose music into Sonic Pi is to write a <code>play</code> method for each note followed by a <code>sleep</code> method. The <code>play</code> method tells the computer which note to play; the <code>sleep</code> method tells the program how long to wait before playing the next note. Because we have sixteen notes spread equally across eight beats, we know that each note must last for one-half of a beat. So we <code>play :F4</code> and then <code>sleep 0.5</code> and then <code>play :C5</code> and then <code>sleep 0.5</code> and then <code>play :F4</code> and so on.</p>
+			<p>Try writing out the full code for the first sixteen notes by referencing the sheet music at the top. It should be 32 lines of code (one <code>play</code> and one <code>sleep</code> method for every note), not including the <code>use_bpm</code> marker at the top. When you're ready, scroll past <a href="http://www.bbc.co.uk/comedy/theoffice/characters/profile_david.shtml" target="_blank">David Brent</a> and check your work.</p>
+			<img class="aligncenter" src="http://i.imgur.com/7MhHUc2.gif" alt="David Brent" />
+			<p>The first sixteen notes of the synth riff, written out in Sonic Pi:</p>
+			<img class="aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/32_lines_of_code.gif" alt="32_lines_of_code" />
+			<p>Copy-and-paste-able code:
+				<pre>use_bpm 175
+
+play :F4
+sleep 0.5
+play :C5
+sleep 0.5
+play :F4
+sleep 0.5
+play :F4
+sleep 0.5
+play :C5
+sleep 0.5
+play :F4
+sleep 0.5
+play :F4
+sleep 0.5
+play :C5
+sleep 0.5
+
+play :F4
+sleep 0.5
+play :C5
+sleep 0.5
+play :F4
+sleep 0.5
+play :F4
+sleep 0.5
+play :C5
+sleep 0.5
+play :F4
+sleep 0.5
+play :C5
+sleep 0.5
+play :F4
+sleep 0.5</pre></p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<nav>
+				<ul class="pager">
+					<li class="previous"><a href="getting_started"><span aria-hidden="true">&larr;</span>Previous</a></li>
+					<li class="next"><a href="a_comment">Next<span aria-hidden="true">&rarr;</span></a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="https://learn.co/ga-be">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <span class="learn-icon">&#66;</span>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/gabe_jackson">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/ga-be">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; ga-be 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+</body>
+
+</html>

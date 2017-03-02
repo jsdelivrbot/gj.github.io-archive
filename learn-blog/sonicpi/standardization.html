@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="words about programming, music, and sonic pi">
+
+    <title>"Such Great Heights" in Sonic Pi</title>
+
+    <link rel="canonical" href="/sonicpi/standardization">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a class="navbar-brand navbar-right" href="https://learn.co" target="_blank">
+            <h6 class="powered_by">Powered by
+                <svg id='svg__logo--text' viewBox='0 0 130.5 42' fill="currentColor" width="50" class="svg-center">
+                  <path d='M41.2,29.5h13v5.1h-19V8h6V29.5z'/>
+                  <path d='M61.1,26.7c0.4,2.6,1.9,4.1,4.3,4.1c1.5,0,2.6-0.5,3.4-1.7h5.7c-1.1,3.8-4.7,6.1-9.3,6.1 c-5.9,0-9.9-4.1-9.9-10.1c0-6,4-10.2,9.9-10.2c4.1,0,7.1,2,8.6,5.7c0.7,1.7,1,3.5,1,6.1H61.1z M68.9,22.7 c-0.2-2.3-1.6-3.5-3.8-3.5c-2.2,0-3.6,1.2-4.1,3.5H68.9z'/>
+                  <path d='M77.7,21.4c0.4-4.4,3.1-6.6,8.5-6.6c2.9,0,5.1,0.7,6.7,2c1.4,1.2,1.9,2.8,1.9,5.6v8.9 c0,2.1,0.1,2.4,0.7,3.3h-5.8c-0.2-0.7-0.2-0.8-0.4-1.5c-1.9,1.6-3.2,2-5.5,2c-4.3,0-7.1-2.4-7.1-6c0-3.6,2.3-5.5,7.7-6.4l3.1-0.5 c1.3-0.2,1.7-0.5,1.7-1.3c0-1.1-1.1-1.8-3-1.8c-2.1,0-3.2,0.7-3.4,2.3H77.7z M89.3,25.5c-0.6,0.2-1.1,0.4-2.1,0.6l-2,0.4 c-2,0.5-2.9,1.2-2.9,2.3c0,1.3,1.1,2,2.9,2c1.9,0,3.2-0.8,4.2-2.4V25.5z'/>
+                  <path d='M104.4,15.4l-0.2,3.4c1.1-3.1,2.6-4,6.7-4v5.3c-0.7-0.1-1-0.1-1.4-0.1c-2,0-3.6,0.9-4.2,2.3 c-0.6,1.3-0.8,3.1-0.8,6.8v5.4h-5.7V15.4H104.4z'/>
+                  <path d='M118.5,15.4v1.9c2.1-1.9,3.3-2.4,5.3-2.4c4.2,0,6.7,2.8,6.7,7.3v12.5h-5.7V24.1c0-2-0.1-2.7-0.6-3.4 c-0.5-0.7-1.3-1.1-2.3-1.1c-1,0-1.8,0.4-2.4,1c-0.6,0.7-0.8,1.5-0.8,3.2v10.8H113V15.4H118.5z'/>
+                  <path stroke-miterlimit='10' d='M15.1,22l8.4,0l-8.4,13.9V22z M12.4,5.6l0,13.7H4.1L12.4,5.6z M12.6,1L0.7,20.4c-0.2,0.3-0.2,0.7,0,1c0.2,0.4,0.6,0.5,1,0.5l10.8,0l0,18.4c0,0.5,0.3,1,0.8,1.1c0.1,0,0.2,0.1,0.3,0.1 c0.4,0,0.8-0.2,1-0.5l11.7-19c0.2-0.3,0.3-1.1,0.3-1.5c-0.2-0.8-0.5-1.2-1.2-1.2H15.2l0-17.5c0-0.5-0.4-1.1-1.3-1.2 c-0.1,0-0.2,0-0.3,0C13.2,0.5,12.8,0.7,12.6,1'/>
+                </svg>
+            </h6>
+        </a>
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+
+                <li>
+                  <a href="/sonicpi.html">Sonic Pi</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>standardization!</h1>
+                    <hr class="small">
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<p>These will be the final few lessons on substance before we move on to style.</p>
+			<p>On the previous page, we constructed an array out of arrays that contain Sonic Pi note values. Now, we're going to adjust our <code>patterns</code> array a bit, create an entirely new super-array that will dictate the sequence in which calls to <code>patterns</code> are made, and learn about some really cool features of Ruby.</p>
+			<p>The first thing we're going to do is revamp the <code>patterns</code> array in a way that will let us (finally) get rid of that pesky F-pattern that keeps showing up stag:</p>
+			<img class=" size-full wp-image-773 aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/sonicpi_stag.gif" alt="sonicpi_stag" width="695" height="446" />
+			<p>Changing the <code>patterns</code> array from <code>[ [F-pattern, E-pattern], [F-pattern, E-pattern, D-pattern, A-pattern] ]</code> to <code>[ [F-pattern], [E-pattern], [D-pattern], [A-pattern] ]</code> will do the trick. We'll also need to alter the calls to <code>patterns[0]</code> and <code>patterns[1]</code> sprinkled throughout the code.</p>
+			<p><code>play_pattern_timed patterns[0], [0.5]</code> will become:
+			<pre>play_pattern_timed patterns[0], [0.5]
+play_pattern_timed patterns[1], [0.5]</pre>
+			And <code>play_pattern_timed patterns[1], [0.5]</code> will become:
+			<pre>play_pattern_timed patterns[0], [0.5]
+play_pattern_timed patterns[1], [0.5]
+play_pattern_timed patterns[2], [0.5]
+play_pattern_timed patterns[3], [0.5]</pre>
+			This is adding a ton of lines, but it's worth it to standardize our code. Exactly why will become apparent shortly. To complete the standardization, we're also going to remove the nested loop we created earlier:</p>
+			<img class=" size-full wp-image-940 aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/sonicpi_restructure3b.gif" alt="sonicpi_restructure3b" width="695" height="446" />
+			<p>Why did we do that? Because now we can break our code up into seven uniform chunks that each have three attributes:
+			<ol>
+				<li>A sequence of calls to our <code>patterns</code> array;</li>
+				<li>A number of times to repeat the sequence;</li>
+				<li>A sleep value (if one exists) to execute before moving on to the next chunk.</li>
+			</ol>
+			We can represent that data in a table:
+			<pre><strong>Patterns Sequence     Repeat(s)      Sleep(s)</strong>
+0, 1                      7              0
+0                         1            128
+0, 1, 2, 3                2             64
+0, 1, 2, 3                2              0
+0, 1                      6              4
+0, 1, 2, 3                2              0
+0, 1                     10              0</pre>
+			If you're having trouble understanding how we obtained some of those values, hopefully the below animation will clear things up:</p>
+			<img class=" size-full wp-image-950 aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/sonicpi_restructure4.gif" alt="sonicpi_restructure4" width="695" height="446" />
+			<p>Adding the <code>sleep 0</code> and <code>1.times do</code> / <code>end</code> snippets does <em>nothing</em> to alter the overall code, but they do help us visually standardize everything in the following format:
+			<pre><span style="color:#ccffcc;"><b>Y</b></span>.times do
+  play_pattern_timed patterns[<span style="color:#ffff99;"><strong>X1</strong></span>], [0.5]
+  play_pattern_timed patterns[<span style="color:#ffff99;"><strong>X2</strong></span>], [0.5] (<em>if necessary</em>)
+  play_pattern_timed patterns[<span style="color:#ffff99;"><strong>X3</strong></span>], [0.5] (<em>if necessary</em>)
+  play_pattern_timed patterns[<span style="color:#ffff99;"><strong>X4</strong></span>], [0.5] (<em>if necessary</em>)
+end
+sleep <span style="color:#ccffff;"><strong>Z</strong></span></pre>
+			Let's take another look at the table of values we just created. Does it start to look more familiar if we add some brackets and commas?
+			<pre><strong><span style="color:#ffff99;">           (X1, X2, X3, X4)         <span style="color:#ccffcc;">(Y)</span>           <span style="color:#ccffff;">(Z)</span></span>
+Element    Patterns Sequence     Repeat(s)      Sleep(s)</strong>
+   0    [ [ <span style="color:#ffff99;">[ 0, 1 ]</span>          ,      <span style="color:#ccffcc;">7</span>      ,      <span style="color:#ccffff;">0</span> ] ,
+   1      [ <span style="color:#ffff99;">[ 0 ]</span>             ,      <span style="color:#ccffcc;">1</span>      ,    <span style="color:#ccffff;">128</span> ] ,
+   2      [ <span style="color:#ffff99;">[ 0, 1, 2, 3 ]</span>    ,      <span style="color:#ccffcc;">2</span>      ,     <span style="color:#ccffff;">64</span> ] ,
+   3      [ <span style="color:#ffff99;">[ 0, 1, 2, 3 ]</span>    ,      <span style="color:#ccffcc;">2</span>      ,      <span style="color:#ccffff;">0</span> ] ,
+   4      [ <span style="color:#ffff99;">[ 0, 1 ]</span>          ,      <span style="color:#ccffcc;">6</span>      ,      <span style="color:#ccffff;">4</span> ] ,
+   5      [ <span style="color:#ffff99;">[ 0, 1, 2, 3 ]</span>    ,      <span style="color:#ccffcc;">2</span>      ,      <span style="color:#ccffff;">0</span> ] ,
+   6      [ <span style="color:#ffff99;">[ 0, 1 ]</span>          ,     <span style="color:#ccffcc;">10</span>      ,      <span style="color:#ccffff;">0</span> ] ]</pre>
+			It's an array! Well, to be more precise, it's three levels of nested arrays. Let's recreate this new array in Sonic Pi and call it <code>order</code> since it represents the order in which we need to make calls to our <code>patterns</code> array:</p>
+			<img class=" size-full wp-image-1013 aligncenter" src="https://sonicpiblog.files.wordpress.com/2016/05/sonicpi_restructure5.gif" alt="sonicpi_restructure5" width="695" height="446" />
+			<p>When you're ready, head to the next page, where we'll implement our new array.</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<nav>
+				<ul class="pager">
+					<li class="previous"><a href="an_array_within_an_array"><span aria-hidden="true">&larr;</span>Previous</a></li>
+					<li class="next"><a href="and_then_there_were_10">Next<span aria-hidden="true">&rarr;</span></a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="https://learn.co/ga-be">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <span class="learn-icon">&#66;</span>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://twitter.com/gabe_jackson">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/ga-be">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; ga-be 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+</body>
+
+</html>
